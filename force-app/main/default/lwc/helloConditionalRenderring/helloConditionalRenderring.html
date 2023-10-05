@@ -1,0 +1,31 @@
+<template>
+    <lightning-layout>
+        <lightning-layout-item>
+            <lightning-card title="Conditional Renederring">
+                <div class="slds-var-m-around_medium">
+                    <lightning-button variant="brand" label="Show data" title="Show data" onclick={handleClick}
+                        class="slds-m-left_x-small">
+                                    
+                    </lightning-button>
+
+                    <template if:true={isVisible}>
+                        <div>Welcome to LWC Learing</div>
+                    </template>
+                    <template if:false={isVisible}>
+                        <div> You can't see the data! </div>
+                    </template>
+                </div>
+                <div class="slds-m-around_medium">
+                <lightning-input type="text" 
+                label ="type hello to see the text" 
+                onkeyup={changeHandler}>
+            </lightning-input>
+                <template if:true={helloMethod}>
+                    <div>hurray! you have typed correctly !</div>
+                </template>
+            </div>
+            </lightning-card>
+        </lightning-layout-item>
+    </lightning-layout>
+
+</template>
